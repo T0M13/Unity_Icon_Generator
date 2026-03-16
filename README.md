@@ -65,7 +65,8 @@ Assets
 └─ Settings
    Unity project settings
 
-   
+```
+
 ---
 
 ## How It Works
@@ -74,11 +75,11 @@ The `IconGenerator` script captures the image rendered by a dedicated camera and
 
 Internally the process works like this:
 
-1. A **RenderTexture** is created using the selected resolution.
-2. The assigned **camera renders the object into that RenderTexture**.
-3. The rendered image is copied into a **Texture2D**.
-4. The texture is **encoded into PNG format**.
-5. The PNG file is **saved to the specified folder**.
+1. A RenderTexture is created using the selected resolution.
+2. The assigned camera renders the object into that RenderTexture.
+3. The rendered image is copied into a Texture2D.
+4. The texture is encoded into PNG format.
+5. The PNG file is saved to the specified folder.
 
 This allows Unity to render exactly what the camera sees and export it as an icon.
 
@@ -88,34 +89,34 @@ Because the function runs directly from the component, **the scene does not need
 
 ## Setup
 
-1. Open the demo scene:
+1. Open the demo scene  
 Assets/Project/Scenes/Icon_Generation_Scene.unity
 
 2. Select the GameObject that contains the `IconGenerator` script.
 
 3. In the Inspector assign the **Icon Camera**.
 
-4. Configure the output settings:
+4. Configure the output settings.
 
-| Setting | Description |
-|--------|-------------|
-Icon Camera | Camera used to render the icon |
-Folder Path | Folder where the PNG will be saved |
-File Name | Name of the exported icon |
-Resolution | Icon size (example: 512) |
-Use GameObject Name If Empty | Uses the GameObject name if no filename is set |
+Setting | Description
+--- | ---
+Icon Camera | Camera used to render the icon
+Folder Path | Folder where the PNG will be saved
+File Name | Name of the exported icon
+Resolution | Icon size (example: 512)
+Use GameObject Name If Empty | Uses the GameObject name if no filename is set
 
 Example configuration:
-Folder Path: Assets/Project/Generated_Icons
-File Name: RubberDuck_Icon
+
+Folder Path: Assets/Project/Generated_Icons  
+File Name: RubberDuck_Icon  
 Resolution: 512
 
 ---
 
 ## Capturing an Icon
 
-You **do not need to run the scene**.
-
+You **do not need to run the scene**.  
 You **do not need to enter Play Mode**.
 
 To generate an icon:
@@ -132,15 +133,14 @@ This executes the function immediately and saves the PNG file.
 ## Output
 
 The icon is saved as:
+
 [FolderPath]/[FileName].png
 
-
 Example:
+
 Assets/Project/Generated_Icons/RubberDuck_Icon.png
 
-
 If the filename field is empty and **Use GameObject Name If Empty** is enabled, the GameObject name will be used instead.
-
 ---
 
 ## Demo Asset
